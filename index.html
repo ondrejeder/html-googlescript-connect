@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Vitejte</h1>
-    <form id="my-form" action="https://script.google.com/macros/s/AKfycby9GxC_TAAQIuqZhUOHTixWpLgh7fMlP6pILjXcV642igQ2dMuiF7rzeV0-BusSiDWQAQ/exec" method="POST">
+    <form id="my-form" action="https://script.google.com/macros/s/AKfycby9GxC_TAAQIuqZhUOHTixWpLgh7fMlP6pILjXcV642igQ2dMuiF7rzeV0-BusSiDWQAQ/exec?methodName=DoTheThing" method="POST">
         <fieldset>
                 <label>Jméno: </label>
                 <input type="text" name="jmeno" id="jmeno" placeholder="Karel" required />
@@ -40,23 +40,23 @@
       }
     
     function submitForm(event) {
-    event.preventDefault(); // prevent the default form submission behavior
+        event.preventDefault(); // prevent the default form submission behavior
 
-    // get the form data
-    const formData = new FormData(document.getElementById('my-form'));
+        // get the form data
+        const formData = new FormData(document.getElementById('my-form'));
 
-    // send the form data to the server using an AJAX request
-    fetch('https://script.google.com/macros/s/AKfycby9GxC_TAAQIuqZhUOHTixWpLgh7fMlP6pILjXcV642igQ2dMuiF7rzeV0-BusSiDWQAQ/exec', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      // display an alert with the server response
-      alert('Data odeslána!');
-    })
-    .catch(error => {
-      console.error(error);
-    });
-  }
+        // send the form data to the server using an AJAX request
+        fetch('https://script.google.com/macros/s/AKfycby9GxC_TAAQIuqZhUOHTixWpLgh7fMlP6pILjXcV642igQ2dMuiF7rzeV0-BusSiDWQAQ/exec?methodName=DoTheThing', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          // display an alert with the server response
+          alert('Data odeslána!');
+        })
+        .catch(error => {
+          console.error(error);
+        });
+      }
 </script>
 </html>
