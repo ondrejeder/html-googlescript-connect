@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Vitejte</h1>
-    <form id="my-form" action="https://script.google.com/macros/s/AKfycby9GxC_TAAQIuqZhUOHTixWpLgh7fMlP6pILjXcV642igQ2dMuiF7rzeV0-BusSiDWQAQ/exec?methodName=DoTheThing" method="POST">
+    <form id="my-form" action="https://script.google.com/macros/s/AKfycby9GxC_TAAQIuqZhUOHTixWpLgh7fMlP6pILjXcV642igQ2dMuiF7rzeV0-BusSiDWQAQ/exec" method="POST">
         <fieldset>
                 <label>Jméno: </label>
                 <input type="text" name="jmeno" id="jmeno" placeholder="Karel" required />
@@ -44,7 +44,7 @@
         // get the form data
         const formData = new FormData(document.getElementById('my-form'));
         // send the form data to the server using an AJAX request
-        fetch('https://script.google.com/macros/s/AKfycby9GxC_TAAQIuqZhUOHTixWpLgh7fMlP6pILjXcV642igQ2dMuiF7rzeV0-BusSiDWQAQ/exec?methodName=DoTheThing', { method: 'POST', body: formData, })
+        fetch('https://script.google.com/macros/s/AKfycby9GxC_TAAQIuqZhUOHTixWpLgh7fMlP6pILjXcV642igQ2dMuiF7rzeV0-BusSiDWQAQ/exec', { method: 'POST', body: formData, })
           .then(response => {
             console.log('Success!', response);
             alert('Data odeslána!');
