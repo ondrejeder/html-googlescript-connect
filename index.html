@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="cz-cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Formular</title>
+</head>
+<body>
+    <h1>Vitejte</h1>
+    <form action="https://script.google.com/macros/s/1SoAK17gliEYLcsJsBwHuTPS9cJGsWukDAet-fjnHv9RUvCGgy269thOi/exec" method="POST">
+        <fieldset>
+                <label>Jméno: </label>
+                <input type="text" name="jmeno" id="jmeno" placeholder="Karel" required />
+                <br>
+                <br>
+                <label >Příjmení: </label>
+                <input type="text" name="prijmeni" id="prijmeni" placeholder="Novotný" required />
+                <br>
+                <br>
+                <label >Rodné číslo (10 číslic bez lomítka)</label>
+                <input type="text" name="rc" id="rc" placeholder="0011228899" required />
+                <br>
+                <br>
+                <label >Adresa:</label>
+                <input type="text" name="adresa" id="adresa" placeholder="Nová Ulice 215, Brno" required/>
+                <br>
+                <br>
+        </fieldset>
+    </form>
+        <br>
+        <button type="submit" value="Submit" onclick="SendData()" >Odeslat data</button>
+</body>
+
+<script>
+    function SendData() {
+        var jmeno = document.getElementById("jmeno").value;
+        
+        // google.script.run.AddDataToSheet(jmeno, prijmeni, adresa, rc);
+        alert("Vaše údaje: " + jmeno + " " + prijmeni);
+      }
+</script>
+</html>
