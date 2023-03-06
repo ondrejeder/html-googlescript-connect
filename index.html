@@ -38,5 +38,25 @@
         // google.script.run.AddDataToSheet(jmeno, prijmeni, adresa, rc);
         alert("Vaše údaje: " + jmeno + " " + prijmeni);
       }
+    
+    function submitForm(event) {
+    event.preventDefault(); // prevent the default form submission behavior
+
+    // get the form data
+    const formData = new FormData(document.getElementById('my-form'));
+
+    // send the form data to the server using an AJAX request
+    fetch('https://script.google.com/macros/s/AKfycby9GxC_TAAQIuqZhUOHTixWpLgh7fMlP6pILjXcV642igQ2dMuiF7rzeV0-BusSiDWQAQ/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      // display an alert with the server response
+      alert('Data odeslána!');
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  }
 </script>
 </html>
